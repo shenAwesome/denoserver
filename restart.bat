@@ -1,4 +1,4 @@
 @echo off
 pushd "%~dp0/core"
-winsw restart DenoServer.xaml
+winsw restart service/DenoServer.xaml
 popd

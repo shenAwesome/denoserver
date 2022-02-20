@@ -1,5 +1,0 @@
-<service> 
-  <id>DenoServer</id>  
-  <executable>D:\code\github\denoserver\core\deno.exe</executable>
-  <arguments>run --allow-net --watch .\Main.ts --config-port=9000</arguments>
-</service>

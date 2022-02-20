@@ -15,6 +15,8 @@ class Test {
             url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/ServiceRequest/FeatureServer/0"
         })
 
+        console.log(JSON.stringify(layer))
+
         return {
             ret: name + age,
             time: Date.now(),

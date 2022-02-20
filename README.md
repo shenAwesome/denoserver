@@ -14,7 +14,7 @@ uninstall.bat
 ```
 Change http port
 ```
-modify ".\core\DenoServer.xaml"
+modify ".\core\service\DenoServer.xaml"
 ```
 Create/modify service
 ```

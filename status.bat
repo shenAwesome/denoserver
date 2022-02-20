@@ -1,4 +1,4 @@
 @echo off
 pushd "%~dp0/core"
-winsw status DenoServer.xaml
+winsw status service/DenoServer.xaml
 popd

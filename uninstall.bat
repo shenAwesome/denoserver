@@ -1,5 +1,5 @@
 @echo off
 pushd "%~dp0/core"
-winsw stop DenoServer.xaml
-winsw uninstall DenoServer.xaml
+winsw stop service/DenoServer.xaml
+winsw uninstall service/DenoServer.xaml
 popd
