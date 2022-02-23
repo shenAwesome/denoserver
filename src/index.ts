@@ -4,22 +4,31 @@ import { ld as _ } from "https://arweave.net/L92fXEGOMl2rGqlDvH6fvtEORNo2LlbDkvt
 import { request } from 'https://cdn.skypack.dev/@esri/arcgis-rest-request?dts';
 import { UserSession } from 'https://cdn.skypack.dev/@esri/arcgis-rest-auth';
 import { getLayer } from 'https://cdn.skypack.dev/@esri/arcgis-rest-feature-layer'; //?dts will fail to compile 
-import { toGeom } from "https://esm.sh/@aslab/geocalc@1.0.32"
+import { toGeom } from "https://esm.sh/@aslab/geocalc@1.0.33"
+import { searchGroups } from "https://cdn.skypack.dev/@esri/arcgis-rest-portal";
+
+import { Portal } from './esri/Portal.ts'
+
 //import jsts from 'https://cdn.skypack.dev/jsts';
 
 class Test {
 
+    async testPortal(name: string) {
+        const portal = new Portal()
+        const group = portal.getGroup('Fire')
+        return portal.getUser(name)
+    }
+
     testGeom(radius = 100) {
-        const point = toGeom(`
-         {
+        const point = toGeom(`{
             "type": "Point",
             "coordinates": [125.6, 10.1]
-          } 
-        `)
+        }`)
         const polygon = point.buffer(parseInt(radius + ''))
         return {
             test: 'hello',
-            feat: polygon.area()
+            feat: polygon.area(),
+            json: polygon.toJSON()
         }
     }
 
@@ -38,6 +47,17 @@ class Test {
             layer: layer.type,
             version: 1.0
         };
+
+        /**
+         *  * const session = new UserSession({
+ *   username: "jsmith",
+ *   password: "123456",
+ *   // optional
+ *   portal: "https://[yourserver]/arcgis/sharing/rest"
+ * })
+ *
+ * request(url, { authentication: session })
+         */
     }
 
     async postTest(name: string) {

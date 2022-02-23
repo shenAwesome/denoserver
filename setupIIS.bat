@@ -1,0 +1,1 @@
+powershell -noprofile -command "&{ start-process powershell -ArgumentList '-noprofile -file \"%~dp0\core\setupIIS.ps1\"' -verb RunAs}" 
