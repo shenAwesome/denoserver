@@ -1,0 +1,10 @@
+.serviceCard{
+    padding:5px; 
+    margin:4px;
+    font-size: 20px;
+}
+
+.serviceDoc{
+    min-height: 1em;
+    padding-left: 1em;
+}
